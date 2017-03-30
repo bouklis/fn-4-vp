@@ -9,7 +9,7 @@ jQuery(function( $ ) {
 		if ($(this).parent().hasClass('open') ) {
 			$(this).parent().removeClass('open');
 		} else {
-			$('.accordion-item').removeClass('open')
+			$('.accordion-item').removeClass('open');
 			$(this).parent().addClass('open');
 		}
 
@@ -20,4 +20,8 @@ jQuery(function( $ ) {
 		console.log($(this).parent().hasClass('open'));
 	});
 
+	// Slider
+	$('.slider').slick({
+		arrows: true
+	});
 });

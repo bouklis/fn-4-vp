@@ -534,6 +534,12 @@ button.btn-cta:after {
   font-size: 1.5em;
 }
 
+.proxima {
+  font-family: Arial;
+  font-size: 20px;
+  font-weight: bold;
+}
+
 /*     Hero
 =====================*/
 .hero {
@@ -633,10 +639,12 @@ button.btn-cta:after {
   color: #D2B9A7;
 }
 
+.call-now .btn-cta,
 .hero-lower .btn-cta {
   font-size: 28px;
 }
 
+.call-now .btn-cta i,
 .hero-lower .btn-cta i {
   font-size: 36px;
   vertical-align: middle;
@@ -659,6 +667,7 @@ button.btn-cta:after {
   padding: 15px;
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: right;
 }
 
 .after-hero .inner {
@@ -670,7 +679,7 @@ button.btn-cta:after {
 .after-hero .inner > div {
   padding-left: 30px;
   margin-top: 70px;
-  width: 78%;
+  width: 72.4%;
   overflow: hidden;
 }
 
@@ -732,6 +741,10 @@ button.btn-cta:after {
 .services .title-section p {
   font-size: 20px;
   line-height: 25px;
+}
+
+.accordion-item {
+  box-shadow: inset 0 3px 4px 2px rgba(0, 0, 0, 0.08);
 }
 
 .accordion-item button {
@@ -840,6 +853,162 @@ button.btn-cta:after {
 
 /* Image section 2
 =============================*/
+.img-section-2 {
+  background: #323131;
+  padding: 20px;
+}
+
+.img-section-2 .inner {
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 20px;
+}
+
+.img-section-2 .inner > div {
+  height: 272px;
+  height: 75vw;
+  border: 2px solid #fff;
+  position: relative;
+}
+
+.img-section-2 .inner .text {
+  font-size: 48px;
+  font-style: italic;
+  text-align: center;
+  line-height: 39px;
+  letter-spacing: 1px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.16);
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+/* Slider
+=============================*/
+.slider {
+  height: 105vw;
+  max-height: 500px;
+  overflow: hidden;
+}
+
+.slider img {
+  width: 100%;
+}
+
+/* Open-hours
+=============================*/
+.hours-open {
+  text-align: center;
+  height: 224px;
+  background-color: #D2B9A7;
+  padding-top: 30px;
+}
+
+.hours-open .material-icons {
+  font-size: 48px;
+  margin-bottom: 15px;
+}
+
+.hours-open .text-1,
+.hours-open .text-2,
+.hours-open .text-3 {
+  font-size: 24px;
+  line-height: 27px;
+  margin-bottom: 0;
+}
+
+.hours-open .text-2 {
+  color: #323131;
+}
+
+.deco-double-line {
+  background: #fff;
+  height: 2px;
+  width: 39px;
+  margin: 15px auto 0;
+  position: relative;
+}
+
+.deco-double-line:after {
+  content: '';
+  display: block;
+  background: #fff;
+  height: 2px;
+  width: 100%;
+  position: absolute;
+  bottom: -6px;
+}
+
+/* Get directions
+=============================*/
+.get-directions {
+  padding: 60px 0 50px;
+  background-size: cover;
+  background-position: center;
+}
+
+.get-directions .text {
+  font-size: 36px;
+  font-style: italic;
+  margin-bottom: 120px;
+}
+
+.get-directions .btn-cta {
+  background: #D2B9A7;
+  height: 60px;
+  padding: 15px 20px;
+  position: relative;
+  z-index: 2;
+}
+
+.get-directions .btn-cta:after {
+  z-index: 0;
+}
+
+/* Call Now
+=============================*/
+.call-now .img-area {
+  position: relative;
+}
+
+.call-now .img-area .deco-corner {
+  width: 133px;
+  height: 104px;
+  border-left: 2px solid #fff;
+  border-top: 2px solid #fff;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+
+.call-now .img-area .deco-corner:after {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-left: 2px solid #fff;
+  border-top: 2px solid #fff;
+  position: absolute;
+  top: 5px;
+  left: 5px;
+}
+
+.call-now img {
+  width: 100%;
+}
+
+.call-now .button-area {
+  background: #D2B9A7;
+  height: 85px;
+}
+
+.call-now .btn-cta {
+  background: #D2B9A7;
+  margin: -40px auto 0;
+}
+
 /* Animations
 =============================*/
 @keyframes rotate {
@@ -854,6 +1023,61 @@ button.btn-cta:after {
 /* -----------------------------------------
 	05. Footer
 ----------------------------------------- */
+.footer {
+  background: #4A4A4A;
+  padding: 30px 0 15px;
+}
+
+.footer .divider {
+  background: #D2B9A7;
+  display: inline-block;
+  height: 2px;
+  width: 60%;
+  max-width: 200px;
+  margin: 30px 0;
+}
+
+.alter-logo h3 {
+  margin-bottom: 0;
+}
+
+.alter-logo p {
+  font-size: 18px;
+}
+
+.tel {
+  font-family: "Comfortaa", cursive;
+  font-size: 20px;
+  margin-bottom: 0;
+}
+
+.social-links {
+  margin: 30px 0 50px;
+}
+
+.footer-menu {
+  font-size: 13px;
+  padding-left: 0;
+  margin-bottom: -15px;
+}
+
+.footer-menu li {
+  display: inline;
+  padding: 0 5px;
+}
+
+.footer-menu a,
+.footer-menu a:hover,
+.footer-menu a:focus {
+  color: #fff;
+}
+
+.copyright {
+  font-size: 11px;
+  font-weight: 300;
+  margin-top: -25px;
+}
+
 /* -----------------------------------------
 	07. Global Mediaqueries
 ----------------------------------------- */
