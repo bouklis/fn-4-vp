@@ -1119,8 +1119,17 @@ button.btn-cta:focus {
   width: 100%;
 }
 
+.slider-img {
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
 .slick-prev,
-.slick-next {
+.slick-next,
+.slick-prev:hover,
+.slick-next:hover {
   background: none;
   border: none;
   background-image: url("images/slider-arrow.svg");
@@ -1137,7 +1146,8 @@ button.btn-cta:focus {
   left: 20px;
 }
 
-.slick-next {
+.slick-next,
+.slick-next:hover {
   right: 20px;
   transform: translateY(-50%) rotateY(180deg);
 }
@@ -1483,5 +1493,18 @@ button.btn-cta:focus {
   .slider {
     height: 100vh;
     max-height: none;
+  }
+  .slider img {
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+  }
+  .call-now img {
+    height: auto;
+    width: 100%;
+    left: 0;
+    top: -140%;
+    bottom: auto;
+    transform: none;
   }
 }
