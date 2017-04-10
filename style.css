@@ -893,57 +893,11 @@ button.btn-cta:focus {
 .accordion-item {
   box-shadow: inset 0 3px 4px 2px rgba(0, 0, 0, 0.08);
   position: relative;
-}
-
-.accordion-item button {
-  background: #D2B9A7;
-  width: 100%;
-  height: 56px;
-  border: none;
-  font-size: 28px;
-  padding: 12px;
-  position: relative;
-  box-shadow: inset 0px 3px 4px 2px rgba(0, 0, 0, 0.08);
-  cursor: pointer;
-}
-
-.accordion-item button i {
-  position: absolute;
-  left: 20px;
-  top: 30%;
-  pointer-events: none;
-  transition: 0.2s ease;
-}
-
-.accordion-item button:hover, .accordion-item button:focus {
-  background: #D2B9A7;
-  color: #fff;
-}
-
-.accordion-item button.fixed {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 100;
-}
-
-.accordion-item button.absolute {
-  position: absolute;
-  top: auto;
-  left: 0;
-  bottom: 0;
-  z-index: 100;
+  padding-top: 56px;
 }
 
 .accordion-item:first-child button {
   box-shadow: none;
-}
-
-.accordion-item .accordion-item-content {
-  height: 0;
-  overflow: hidden;
-  transition: 0.4s ease;
 }
 
 .accordion-item .line {
@@ -956,6 +910,57 @@ button.btn-cta:focus {
 
 .accordion-item.open .accordion-item-content {
   height: auto;
+}
+
+.service-item-button {
+  background: #D2B9A7;
+  width: 100%;
+  height: 56px;
+  border: none;
+  font-size: 28px;
+  padding: 12px;
+  position: relative;
+  box-shadow: inset 0px 3px 4px 2px rgba(0, 0, 0, 0.08);
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.service-item-button i {
+  position: absolute;
+  left: 20px;
+  top: 30%;
+  pointer-events: none;
+  transition: 0.2s ease;
+}
+
+.service-item-button:hover, .service-item-button:focus {
+  background: #D2B9A7;
+  color: #fff;
+}
+
+.service-item-button.fixed, .service-item-button.absolute-bottom {
+  left: 0;
+  z-index: 100;
+  box-shadow: none;
+}
+
+.service-item-button.fixed {
+  position: fixed;
+  top: 0;
+  right: 0;
+}
+
+.service-item-button.absolute-bottom {
+  position: absolute;
+  top: auto;
+  bottom: 0;
+}
+
+.accordion-item-content {
+  height: 0;
+  overflow: hidden;
 }
 
 .accordion-item-list {

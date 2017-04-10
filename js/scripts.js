@@ -26,19 +26,29 @@ jQuery(function( $ ) {
 
 	// Services Items
 	// ==========================
-	$('.service-item-button').click(function() {
+	$('.service-item-button').click(function(e) {
 		// Close all tabs
 
 		if ($(this).parent().hasClass('open') ) {
 			// Close accordion item
 			$('.accordion-item').removeClass('open');
-			console.log('ffr');
 
 			// Remove position fixed
 			$(this).removeClass('fixed');
 		} else {
+			// Close All Accordion Items
 			$('.accordion-item').removeClass('open');
+
+			// Open clicked Accordion Item
 			$(this).parent().addClass('open');
+
+			setTimeout(function() {
+					$(e.currentTarget).addClass('fixed');
+					console.log('delay');
+				},
+				400
+			);
+
 		}
 
 	});
@@ -47,47 +57,49 @@ jQuery(function( $ ) {
 	// stick it smoothly on top of the window
 	$('.accordion-item').click(function() {
 
-		// $('.accordion-item').removeClass('open');
-		// $(this).addClass('open');
+		if ( $('.accordion-item').hasClass('open') ) {
+			$('html, body').animate({
+		        'scrollTop' : $(this).position().top + 1
+		    });
+		}
 
-		var x = $(this).offset().top;
-		var y = $(window).scrollTop();
-
-		$('html, body').animate({
-	        'scrollTop' : $(this).position().top
-	    });
-
-		// $(this).find('.service-item-button').addClass('fixed');
-		// $(this).find('.accordion-item-content').css('margin-top', '56px');
-
-		// console.log(x, y);
 	});
 
 	$(window).scroll(function() {
-		// var x = $('.accordion-item.open').offset().top;
-		// var y = $(window).scrollTop();
-		// var itemHeight = $('.accordion-item.open').height();
-		//
+		var itemOffsetTop = $('.accordion-item.open').offset().top;
+		var y = $(window).scrollTop();
+		var itemHeight = $('.accordion-item.open').height();
+
 		// console.log(x, y, itemHeight);
 
-		// if ( x < y - itemHeight + 56) {
-		// 	 $('.accordion-item.open .service-item-button').removeClass('fixed');
-		// 	 $('.accordion-item.open .service-item-button').addClass('absolute');
-		// }
-		// if ( x < y - itemHeight) {
-		// 	$('.accordion-item.open .service-item-button').removeClass('absolute');
-		// }
-		// if ( x < y - itemHeight) {
-		// 	 $('.accordion-item.open .service-item-button').removeClass('fixed');
-		// }
-		// if ( x > y ) {
-		// 	 $('.accordion-item.open .service-item-button').removeClass('fixed');
-		// }
-		//
-		// if ($('.accordion-item').hasClass('open')) {
-		// 	// $('.accordion-item.open .service-item-button').removeClass('fixed');
-		//
-		// }
+
+		// When scrolling up and the bottom of the open iten reaches the top of the viewport
+		// remove class 'fixed' and add 'absolute-bottom' to make the button disappear smoothly
+		if ($('.accordion-item').hasClass('open') &&  itemOffsetTop < y - itemHeight ) {
+			$('.accordion-item.open .service-item-button').removeClass('fixed');
+			$('.accordion-item.open .service-item-button').addClass('absolute-bottom');
+		}
+
+		// When item open and on scrolling down the top of this item is in viewport
+		// remove 'fixed' and 'absolute' classes to let the button move freely with its item
+		if ( $('.service-item-button').hasClass('fixed') && itemOffsetTop > y ) {
+			$('.service-item-button').removeClass('fixed');
+			console.log('Now remove classe on scroll down');
+		}
+
+		// If item open and on scrolling up its button reaches the top of the viewport
+		// add class 'fixed' to the button to remain visible.
+		if ( $('.accordion-item').hasClass('open') && itemOffsetTop < y ) {
+			$('.accordion-item.open .service-item-button').addClass('fixed');
+		}
+
+		// When scrolling down and the bottom of the open item begins to be
+		// visible at the top of the viewport, make the button 'fixed'
+		if ( $('.accordion-item').hasClass('open') && $('.service-item-button').hasClass('absolute-bottom') && itemOffsetTop > y - itemHeight ) {
+			$('.accordion-item.open .service-item-button').removeClass('absolute-bottom');
+			$('.accordion-item.open .service-item-button').addClass('fixed');
+		}
+
 	});
 
 
