@@ -11,6 +11,30 @@ jQuery(function( $ ) {
 	$('.hero-lower').css("height", innerHeight * 0.35 );
 
 
+	// Sticky Header
+	// ===============================
+
+	$(window).scroll(function() {
+		// if ($('.header').hasClass('fixed')) return;
+
+		if ($(window).scrollTop() > 100) {
+		    $('.header').addClass('fixed');
+			setTimeout(function() {
+					$('.header').addClass('open');
+				},
+				400
+			);
+		} else if ($(window).scrollTop() < 100) {
+			$('.header').removeClass('open');
+			setTimeout(function() {
+					$('.header').removeClass('fixed');
+				},
+				400
+			);
+		}
+		console.log($(window).scrollTop() );
+
+	});
 
 	//  Language Chooser Pop up
 	// ===============================
@@ -69,6 +93,8 @@ jQuery(function( $ ) {
 		});
 
 		$(window).scroll(function() {
+			if (!$('.accordion-item.open').length) return;
+
 			var itemOffset = $('.accordion-item.open').offset();
 			var y = $(window).scrollTop();
 			var itemHeight = $('.accordion-item.open').height();
